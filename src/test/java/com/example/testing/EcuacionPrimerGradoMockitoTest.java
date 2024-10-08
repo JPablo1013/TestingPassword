@@ -1,6 +1,6 @@
 package com.example.testing;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach; // Cambiado a BeforeEach
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -10,15 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 public class EcuacionPrimerGradoMockitoTest {
+
     @InjectMocks
     private EcuacionPrimerGrado ecuacionPrimerGrado;
 
     @Mock
     private Parseador parseador;
 
-    @Before
+    @BeforeEach // Cambiado de @Before a @BeforeEach
     public void inicializaMocks() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this); // Usamos openMocks en lugar de initMocks
     }
 
     @Test
