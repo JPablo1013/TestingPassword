@@ -1,11 +1,10 @@
 package com.example.testing;
 
-public class PasswordUtil implements PasswordEvaluator {
+public class PasswordUtil {
     public enum Securitylevel {
         WEAK, MEDIUM, STRONG
     }
 
-    @Override
     public Securitylevel assessPassword(String password) {
         // Evaluar si la longitud es menor que 8 caracteres
         if (password.length() < 8) {

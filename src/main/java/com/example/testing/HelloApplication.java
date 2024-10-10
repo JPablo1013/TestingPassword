@@ -20,12 +20,12 @@ public class HelloApplication extends Application {
         Label resultLabel = new Label();
 
         // Crear el evaluador de contraseñas
-        PasswordEvaluator passwordEvaluator = new PasswordUtil();
+        PasswordUtil passwordUtil = new PasswordUtil(); // Cambiar a PasswordUtil
 
         // Acción al hacer clic en el botón
         evaluateButton.setOnAction(event -> {
             String password = passwordField.getText();
-            PasswordUtil.Securitylevel level = passwordEvaluator.assessPassword(password);
+            PasswordUtil.Securitylevel level = passwordUtil.assessPassword(password); // Cambiar a passwordUtil
             resultLabel.setText("Nivel de seguridad: " + level);
         });
 
